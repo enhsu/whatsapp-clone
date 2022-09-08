@@ -57,12 +57,18 @@ function Sidebar() {
       <Header>
         <UserAvatar src={user?.photoURL as string} alt="user avatar" />
         <IconsContainer>
-          <IconButton onClick={async () => await createChat()}>
-            <ChatIcon />
-          </IconButton>
-          <IconButton onClick={() => signOut()}>
-            <LogoutIcon />
-          </IconButton>
+          <TipContainer>
+            <IconButton onClick={async () => await createChat()}>
+              <ChatIcon />
+            </IconButton>
+            <span>NEW CHAT</span>
+          </TipContainer>
+          <TipContainer>
+            <IconButton onClick={() => signOut()}>
+              <LogoutIcon />
+            </IconButton>
+            <span>SIGN OUT</span>
+          </TipContainer>
         </IconsContainer>
       </Header>
 
@@ -121,7 +127,9 @@ const UserAvatar = styled(Avatar)`
   }
 `;
 
-const IconsContainer = styled.div``;
+const IconsContainer = styled.div`
+  display: flex;
+`;
 
 const Search = styled.div`
   display: flex;
@@ -145,5 +153,24 @@ const SidebarButton = styled(Button)`
   &&& {
     border-top: 1px solid whitesmoke;
     border-bottom: 1px solid whitesmoke;
+  }
+`;
+
+const TipContainer = styled.div`
+  position: relative;
+  span {
+    font-size: 14px;
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    width: max-content;
+    padding: 5px 10px;
+    color: gray;
+    visibility: hidden;
+  }
+  &:hover {
+    span {
+      visibility: visible;
+    }
   }
 `;

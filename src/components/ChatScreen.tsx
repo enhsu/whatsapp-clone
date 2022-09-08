@@ -8,6 +8,7 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import MicIcon from "@mui/icons-material/Mic";
+import SendIcon from "@mui/icons-material/Send";
 import {
   collection,
   query,
@@ -65,7 +66,11 @@ function ChatScreen({ chat, messages }: PropsType) {
     }
   };
 
-  const sendMessage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const sendMessage = (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
     e.preventDefault();
 
     // Update the last seen
@@ -151,7 +156,14 @@ function ChatScreen({ chat, messages }: PropsType) {
         >
           Send Message
         </button>
-        <MicIcon />
+        {!input ? (
+          <MicIcon />
+        ) : (
+          <SendIcon
+            style={{ cursor: "pointer" }}
+            onClick={(e) => sendMessage(e)}
+          />
+        )}
       </InputContainer>
     </Container>
   );

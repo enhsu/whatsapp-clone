@@ -1,8 +1,8 @@
 # Whatsapp clone
 
-[Demo]()
+[Demo](https://whatsapp-clone-enhsu.vercel.app/)
 
-[Source Code]()
+[Source Code](https://github.com/enhsu/whatsapp-clone)
 
 This is a simple `Whatsapp clone` project. Useing `react-firebase-hooks`, which can retrieve and monitor a collection value in Cloud Firestore, to implement the real-time chatting.
 
@@ -22,10 +22,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Implement function
 
-- SignIn, ![SignIn](./public/NOTES/SignIn.png)
-- SignOut, ![SignOut](./public/NOTES/SignOut.png)
+- SignIn with google account
+  ![SignIn page](./public/NOTES/SignIn.png)
+- SignOut
+  ![SignOut](./public/NOTES/SignOut.png)
 - Add chat with email address
+  ![Add chat](./public/NOTES/Add_Chat.png)
 - Text only message
+  ![Send message](./public/NOTES/Send_Message.png)
 
 ## Getting Started
 
